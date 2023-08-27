@@ -11,6 +11,19 @@ export const noteReducer = (state, action) => {
                 ...state,
                 noteLists: [...state.noteLists, action.payload]
             };
+        case "DELETENOTE":
+            const updatedDeletedNotes = [...state.deletedNotes,state.noteLists[action.payload]]
+            const updatedNoteList = state.noteLists.filter((index) => index !== action.payload )
+            return {
+                ...state,
+                deletedNotes: updatedDeletedNotes,
+                noteLists:updatedNoteList
+            }
+        case "ARCHIEVENOTE":
+            return {
+                ...state,
+                archiveNotes:[...state.archiveNotes, action.payload]
+            }
 
             default:
             return state;

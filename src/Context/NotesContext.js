@@ -6,7 +6,7 @@ export const NotesContext = createContext();
 
 export const NotesContextProvider = ({children})=>{
     const [noteState,dispatch] = useReducer(noteReducer,notesIntialState)
-    console.log("noteState",noteState,dispatch)
+    console.log("notestate in cotext",noteState)
 
     useEffect(()=>{
         localStorage.setItem("NoteList",JSON.stringify(noteState));
