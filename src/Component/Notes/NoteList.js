@@ -9,9 +9,8 @@ export const NoteList = () => {
     const onClickHandleDeleteNote = (index,note)=>{
         console.log("delete",index,note)
         dispatch({type:"DELETENOTE",payload:index})
-
-
     }
+    
   return (
     <>{noteState.noteLists.length > 0 && noteState.noteLists.map((note,index) =>{
         return <div  key={index} className='flex w-64 bg-[#fef08a] rounded p-5 flex-col justify-between'>

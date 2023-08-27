@@ -17,7 +17,7 @@ export const noteReducer = (state, action) => {
             return {
                 ...state,
                 deletedNotes: updatedDeletedNotes,
-                noteLists:updatedNoteList
+                noteLists:[...updatedNoteList]
             }
         case "ARCHIEVENOTE":
             return {
